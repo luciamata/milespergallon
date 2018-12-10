@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title> Calculate Miles per Gallon </title>
+    <script>
+      /* Input: Beginning and ending odometer readings, and the number of
+       *        gallons of gasonile used.
+       * Processing: Subtract beginning mileage from ending mileage. Divide
+                number of gallons used by the total of the subtraction.
+       * Output: Mileage in miles per gallon.
+       */
+
+       function milespergallon () {
+         // Get input
+         var beginning = parseFloat(document.getElementById('beginningodometer').value);
+         var ending = parseFloat(document.getElementById('endingodometer').value);
+         var gas = parseFloat(document.getElementById('gallonsofgasoline').value);
+
+         // Calculate miles per gallon
+         var milespergallon = (ending - beginning) / gas;
+
+         //Display miles per gallon to user
+         document.getElementById('mileage').innerHTML = milespergallon;
+       }
+    </script>
+  </head>
+
+  <body>
+    Beginning odometer reading: <input type="text" id="beginningodometer"><br>
+    Ending odometer reading: <input type="text" id="endingodometer"><br>
+    Gallons of gasoline used: <input type="text" id="gallonsofgasoline"><br>
+    <button type="button" onclick="milespergallon()">Calculate</button><br>
+    Mileage: <div id="mileage"></div>
+  </body>
+</html>
